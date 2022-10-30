@@ -1,471 +1,879 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marin Comics</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      .video-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marin Comics</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <style>
-    .video-container {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-    }
+      .video-container::after {
+        padding-top: 56.25%;
+        display: block;
+        content: "";
+      }
 
-    .video-container::after {
-      padding-top: 56.25%;
-      display: block;
-      content: '';
-    }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
 
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+      .slider-text {
+        text-shadow: 0px 0px 4px #000000;
+      }
 
-    .slider-text {
-      text-shadow: 0px 0px 4px #000000;
-    }
+      #dsgvo-warnung {
+        width: 80%;
+      }
+    </style>
+  </head>
 
-    #dsgvo-warnung {
-      width: 80%;
-    }
-  </style>
-</head>
+  <body>
+    <nav
+      class="d-flex flex-wrap justify-content-center p-3 bg-primary bg-gradient text-light"
+    >
+      <a
+        href="https://marincomics.com"
+        class="d-flex align-items-center mb-md-1 me-md-auto text-dark text-decoration-none"
+      >
+        <img
+          src="https://marincomics.com/img/marincomics-logo.png"
+          alt="Marin Comics"
+          height="50px"
+        />
+      </a>
 
-<body>
-  <nav class="d-flex flex-wrap justify-content-center py-3 bg-primary bg-gradient text-light">
-    <a href="https://marincomics.com"
-      class="d-flex align-items-center ms-5 mb-md-1 me-md-auto text-dark text-decoration-none">
-      <img src="https://marincomics.com/img/marincomics-logo.png" alt="Marin Comics" height="50px" />
-    </a>
+      <ul class="nav nav-pills me-4">
+        <li class="nav-item">
+          <a
+            href="https://marincomics.com/index.html#projects"
+            class="nav-link link-light"
+            >Projects</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://marincomics.com/about.html"
+            class="nav-link link-light"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://marincomics.com/contact.html"
+            class="nav-link link-light"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-    <ul class="nav nav-pills me-4">
-      <li class="nav-item">
-        <a href="https://marincomics.com/index.html#projects" class="nav-link link-light">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a href="https://marincomics.com/about.html" class="nav-link link-light">About</a>
-      </li>
-      <li class="nav-item">
-        <a href="https://marincomics.com/contact.html" class="nav-link link-light">Contact</a>
-      </li>
-    </ul>
-  </nav>
-
-  <main class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-center"><img src="img/profireiniger-full-logo.svg" alt="Profireiniger" height="200px" class="m-2">
-        <p class="text-center">
-          <a href="https://profireiniger.at" target="_blank" class="btn btn-outline-primary">Open Website</a>
-          <a href="https://github.com/mbalabanov/profireiniger" target="_blank" class="btn btn-outline-primary">Open on
-            GitHub</a>
-        </p>
-        <h3 class="text-center">Profireiniger Cleaning Company Website and CRM</h3>
-        <p>I started out with these concept sketches for the <strong>website and backoffice web application</strong>
-          for a cleaning company. The company urgently needs a brochure website that presents its services
-          to potential customers and provides directions and a contact form. Once that has been launched
-          the company wants to add news pages themselves, so the website will be
-          extended with user management and a simple CMS for adding news items.</p>
-        <p>In the third phase, a full backoffice application will be added to the website for employees
-          of the company to manage customers, to create create quotes as custom offers for future business and
-          finally to invoice already provided services to customers.</p>
-      </div>
-    </div>
-    <div class="row pb-3">
-      <div class="col-md-4">
-        <div class="alert-primary border rounded p-4 mt-1">
-          <h4>Phase I: Brochure Website with contact form</h4>
-          <p>In this phase, a flat HTML/CSS/JS website will be created with pages describing the
-            services, the company and a video. The directions to the office will be an embedded Google Maps snippet and
-            the contact form will use Elastic Mail for users to send requests to the company.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="alert-primary border rounded p-4 mt-1">
-          <h4>Phase II: User Management and News CMS</h4>
-          <p>The news section will be added with an overview page that aggregates the news items and
-            links to the full news items. A user management and a login will be implemented. Company
-            employees can login to the editorial backend to create news items for publication and to edit the content on
-            the default pages (home,about, services, etc.).</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="alert-primary border rounded p-4 mt-1">
-          <h4>Phase III: Backoffice Quote Management and CRM</h4>
-          <p>In the final phase, a backoffice section will be added. Here employees can create and
-            manage quote offerings for interested parties and put together their custom offers based on the
-            predefined services. They will also be able to create and manage customers (name,
-            address, email address, phone number, etc.) as well as create and manage invoices for delivered services.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-md-12">
-        <h5 class="text-center">Website Sitemap and Wireframes (Phase I)</h5>
-        <p>This sketch features pages describing the services, the company and a video. The directions
-          to the office will be an embedded Google Maps snippet and the contact form will use Elastic Mail for
-          users to send requests to the company.</p>
-        <div class="row">
-          <div class="col-md-6 pt-5">
-            <p class="text-center"><img src="img/concept-sketches/01_website-phase1.png" class="img-fluid"
-                                alt="Website sitemap" data-bs-toggle="modal" data-bs-target="#cleaning-modal-1"><br />
-              <a class="btn btn-outline-primary mt-1" data-bs-toggle="modal" data-bs-target="#cleaning-modal-1">
-                Zoom image
-              </a>
-            </p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center"><img src="img/concept-sketches/website-wireframes.jpg" class="img-fluid"
-                                alt="Website Wireframes" data-bs-toggle="modal" data-bs-target="#cleaning-modal-wireframes-1"><br />
-              <a class="btn btn-outline-primary mt-1" data-bs-toggle="modal"
-                data-bs-target="#cleaning-modal-wireframes-1">
-                Zoom image
-              </a>
-            </p>
-          </div>
-        </div>
-        <div class="my-5">
-          <h5 class="text-center">Promotional Video</h5>
-          <p class="text-center">This is the German-language promotional video I made for the company</p>
-          <div class="video-container"><iframe id="youtube-video" src="https://www.youtube.com/embed/yzEIiaqVOOI"
-              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe></div>
+    <main class="container">
+      <div class="row">
+        <div class="col-md-12">
           <p class="text-center">
-            <a href="https://youtu.be/b_xoEakVeh0" target="_blank" class="btn btn-outline-primary btn-sm my-2">Watch
-              Video on Youtube</a>
+            <img
+              src="img/profireiniger-full-logo.svg"
+              alt="Profireiniger"
+              height="200px"
+              class="m-2"
+            />
+          </p>
+          <p class="text-center">
+            <a
+              href="https://profireiniger.at"
+              target="_blank"
+              class="btn btn-outline-primary"
+              >Open Website</a
+            >
+            <a
+              href="https://github.com/mbalabanov/profireiniger"
+              target="_blank"
+              class="btn btn-outline-primary"
+              >Open on GitHub</a
+            >
+          </p>
+          <h3 class="text-center">
+            Profireiniger Cleaning Company Website and CRM
+          </h3>
+          <p>
+            I started out with these concept sketches for the
+            <strong>website and backoffice web application</strong> for a
+            cleaning company. The company urgently needs a brochure website that
+            presents its services to potential customers and provides directions
+            and a contact form. Once that has been launched the company wants to
+            add news pages themselves, so the website will be extended with user
+            management and a simple CMS for adding news items.
+          </p>
+          <p>
+            In the third phase, a full backoffice application will be added to
+            the website for employees of the company to manage customers, to
+            create create quotes as custom offers for future business and
+            finally to invoice already provided services to customers.
           </p>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h3>Impressions of the production website</h3>
-        <p>
-          <a href="https://profireiniger.at" target="_blank" class="btn btn-outline-primary">Open Website</a>
-          <a href="https://github.com/mbalabanov/profireiniger" target="_blank" class="btn btn-outline-primary">Open on
-            GitHub</a>
-        </p>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <h4>Front Page</h4>
-        <img src="img/screenshots/profireiniger-website-1.png" alt="Screenshot of Profireiniger Website" class="img-fluid border">
-      </div>
-      <div class="col-md-6">
-        <h4>Services Detail Page</h4>
-        <img src="img/screenshots/profireiniger-website-2.png" alt="Second Screenshot of Profireiniger Website" class="img-fluid border">
-      </div>
-    </div>
-    <div class="row my-5">
-      <div class="col-md-6">
-        <h4>Promotional Pane and Video</h4>
-        <img src="img/screenshots/profireiniger-website-3.png" alt="Screenshot of Profireiniger Website" class="img-fluid border">
-      </div>
-      <div class="col-md-6">
-        <h4>Contact Form and Google Map</h4>
-        <img src="img/screenshots/profireiniger-website-4.png" alt="Second Screenshot of Profireiniger Website" class="img-fluid border">
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <h5>Login and User Management<br />(Phase II)</h5>
-        <p class="text-center"><img src="img/concept-sketches/02_user-login-phase-2.png"
-                                class="img-fluid" alt="Login and User Management" data-bs-toggle="modal"
-                                data-bs-target="#cleaning-modal-2"><br /><a class="btn btn-outline-primary mt-3"
-            data-bs-toggle="modal" data-bs-target="#cleaning-modal-2">
-            Zoom image
-          </a></p>
-        <p>A user management and a login will be implemented for company employees. It will include the
-          necessary password reset functionality.</p>
-      </div>
-      <div class="col-md-6">
-        <h5>Content Editing<br />(Phase II)</h5>
-        <p class="text-center"><img src="img/concept-sketches/04_content-editing-phase-2.png"
-                                class="img-fluid" alt="Content Editing" data-bs-toggle="modal"
-                                data-bs-target="#cleaning-modal-3"><br /><a class="btn btn-outline-primary mt-3"
-            data-bs-toggle="modal" data-bs-target="#cleaning-modal-3">
-            Zoom image
-          </a></p>
-        <p>Once logged in, company emplyees can access the editorial
-          backend to create news items for publication and to edit the content on the default pages
-          (home,
-          about, services, etc.).</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h5>News Section<br />(Phase II)</h5>
-        <p class="text-center"><img src="img/concept-sketches/03_news-section-phase-2.png"
-                                class="img-fluid" alt="News Section" data-bs-toggle="modal"
-                                data-bs-target="#cleaning-modal-4"><br /><a class="btn btn-outline-primary mt-3"
-            data-bs-toggle="modal" data-bs-target="#cleaning-modal-4">
-            Zoom image
-          </a></p>
-        <p>The frontend needs to be extended to provide a news section and articles as well as a news
-          archive.
-        </p>
-      </div>
-      <div class="col-md-6">
-        <h5>Backoffice Features<br />(Phase III)</h5>
-        <p class="text-center"><img src="img/concept-sketches/05_backoffice-phase 3.png"
-                                class="img-fluid" alt="Backoffice Management" data-bs-toggle="modal"
-                                data-bs-target="#cleaning-modal-5"><br /><a class="btn btn-outline-primary mt-3"
-            data-bs-toggle="modal" data-bs-target="#cleaning-modal-5">
-            Zoom image
-          </a></p>
-        <p>Here employees can create and manage
-          quote offerings for interested parties and put together their custom offers based on the
-          predefined services. They will also be able to create and manage customers (name, address,
-          email
-          address, phone number, etc.) as well as create and manage invoices for delivered services.
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <h5>Database Entity Relationship Diagram</h5>
-        <p>The database will have seven tables. The main customer tables will be related to the invoices
-          and
-          the
-          offerings. The services table will contain the individual cleaning services provided by the
-          company
-          and their price. These will be listed in the user interface so that they can be added to
-          offers
-          and
-          invoices. The other tables will contain the content for the news articles and the default
-          pages
-          (e.g. home, about, services, etc.).</p>
-        <p class="text-center"><img src="img/concept-sketches/06_db-erd.png" class="img-fluid"
-                                alt="Database Entity Relationship Management" data-bs-toggle="modal"
-                                data-bs-target="#cleaning-modal-6"><br /><a class="btn btn-outline-primary mt-1 mb-3"
-            data-bs-toggle="modal" data-bs-target="#cleaning-modal-6">
-            Zoom image
-          </a></p>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="cleaning-modal-1" tabindex="-1" aria-labelledby="cleaning-modal-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleaning-modal-1">Website Sitemap (Phase I)</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>This sketch features pages describing the services, the company and a video. The
-              directions to the office will be an embedded Google Maps snippet and the contact
-              form
-              will use Elastic Mail for users to send requests to the company.</p>
-            <p class="text-center"><img src="img/concept-sketches/01_website-phase1.png"
-                                        class="img-fluid" alt="Website Sitemap (Phase I)"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-2" data-bs-dismiss="modal">Next &raquo;</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="cleaning-modal-wireframes-1" tabindex="-1" aria-labelledby="cleaning-modal-wireframes-1"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleaning-modal-wireframes-1">Website Wireframes (Phase I)</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>This sketch shows the wireframes of the frontpage with a carousel slider on the top, a list of services
-              as
-              cards, a contact form, a Youtube video and an embedded Google Map.</p>
-            <p class="text-center"><img src="img/concept-sketches/website-wireframes.jpg" class="img-fluid" alt="Website Wireframes (Phase I)">
+      <div class="row pb-3">
+        <div class="col-md-4">
+          <div class="alert-primary border rounded p-4 mt-1">
+            <h4>Phase I: Brochure Website with contact form</h4>
+            <p>
+              In this phase, a flat HTML/CSS/JS website will be created with
+              pages describing the services, the company and a video. The
+              directions to the office will be an embedded Google Maps snippet
+              and the contact form will use Elastic Mail for users to send
+              requests to the company.
             </p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-2" data-bs-dismiss="modal">Next &raquo;</button>
-
+        </div>
+        <div class="col-md-4">
+          <div class="alert-primary border rounded p-4 mt-1">
+            <h4>Phase II: User Management and News CMS</h4>
+            <p>
+              The news section will be added with an overview page that
+              aggregates the news items and links to the full news items. A user
+              management and a login will be implemented. Company employees can
+              login to the editorial backend to create news items for
+              publication and to edit the content on the default pages
+              (home,about, services, etc.).
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="alert-primary border rounded p-4 mt-1">
+            <h4>Phase III: Backoffice Quote Management and CRM</h4>
+            <p>
+              In the final phase, a backoffice section will be added. Here
+              employees can create and manage quote offerings for interested
+              parties and put together their custom offers based on the
+              predefined services. They will also be able to create and manage
+              customers (name, address, email address, phone number, etc.) as
+              well as create and manage invoices for delivered services.
+            </p>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="cleaning-modal-2" tabindex="-1" aria-labelledby="cleaning-modal-2" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleaning-modal-2">Login and User Management (Phase II)</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <h5 class="text-center">Website Sitemap and Wireframes (Phase I)</h5>
+          <p>
+            This sketch features pages describing the services, the company and
+            a video. The directions to the office will be an embedded Google
+            Maps snippet and the contact form will use Elastic Mail for users to
+            send requests to the company.
+          </p>
+          <div class="row">
+            <div class="col-md-6 pt-5">
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/01_website-phase1.png"
+                  class="img-fluid"
+                  alt="Website sitemap"
+                  data-bs-toggle="modal"
+                  data-bs-target="#cleaning-modal-1"
+                /><br />
+                <a
+                  class="btn btn-outline-primary mt-1"
+                  data-bs-toggle="modal"
+                  data-bs-target="#cleaning-modal-1"
+                >
+                  Zoom image
+                </a>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/website-wireframes.jpg"
+                  class="img-fluid"
+                  alt="Website Wireframes"
+                  data-bs-toggle="modal"
+                  data-bs-target="#cleaning-modal-wireframes-1"
+                /><br />
+                <a
+                  class="btn btn-outline-primary mt-1"
+                  data-bs-toggle="modal"
+                  data-bs-target="#cleaning-modal-wireframes-1"
+                >
+                  Zoom image
+                </a>
+              </p>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>A user management and a login will be implemented for company employees. It will
-              include
-              the
-              necessary password reset functionality.</p>
-            <p class="text-center"><img src="img/concept-sketches/02_user-login-phase-2.png"
-                                        class="img-fluid" alt="Login and User Management (Phase II)"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-1" data-bs-dismiss="modal">&laquo; Previous</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-3" data-bs-dismiss="modal">Next &raquo;</button>
+          <div class="my-5">
+            <h5 class="text-center">Promotional Video</h5>
+            <p class="text-center">
+              This is the German-language promotional video I made for the
+              company
+            </p>
+            <div class="video-container">
+              <iframe
+                id="youtube-video"
+                src="https://www.youtube.com/embed/yzEIiaqVOOI"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="text-center">
+              <a
+                href="https://youtu.be/b_xoEakVeh0"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm my-2"
+                >Watch Video on Youtube</a
+              >
+            </p>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="cleaning-modal-3" tabindex="-1" aria-labelledby="cleaning-modal-3" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleaning-modal-3">Content Editing (Phase II)</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Once logged in, company emplyees can access the editorial backend to create news
-              items
-              for publication and to edit the content on the default pages (home, about, services,
-              etc.).</p>
-            <p class="text-center"><img src="img/concept-sketches/04_content-editing-phase-2.png"
-                                        class="img-fluid" alt="Content Editing (Phase II)"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-2" data-bs-dismiss="modal">&laquo; Previous</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-4" data-bs-dismiss="modal">Next &raquo;</button>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3>Impressions of the production website</h3>
+          <p>
+            <a
+              href="https://profireiniger.at"
+              target="_blank"
+              class="btn btn-outline-primary"
+              >Open Website</a
+            >
+            <a
+              href="https://github.com/mbalabanov/profireiniger"
+              target="_blank"
+              class="btn btn-outline-primary"
+              >Open on GitHub</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <h4>Front Page</h4>
+          <img
+            src="img/screenshots/profireiniger-website-1.png"
+            alt="Screenshot of Profireiniger Website"
+            class="img-fluid border"
+          />
+        </div>
+        <div class="col-md-6">
+          <h4>Services Detail Page</h4>
+          <img
+            src="img/screenshots/profireiniger-website-2.png"
+            alt="Second Screenshot of Profireiniger Website"
+            class="img-fluid border"
+          />
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col-md-6">
+          <h4>Promotional Pane and Video</h4>
+          <img
+            src="img/screenshots/profireiniger-website-3.png"
+            alt="Screenshot of Profireiniger Website"
+            class="img-fluid border"
+          />
+        </div>
+        <div class="col-md-6">
+          <h4>Contact Form and Google Map</h4>
+          <img
+            src="img/screenshots/profireiniger-website-4.png"
+            alt="Second Screenshot of Profireiniger Website"
+            class="img-fluid border"
+          />
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <h5>Login and User Management<br />(Phase II)</h5>
+          <p class="text-center">
+            <img
+              src="img/concept-sketches/02_user-login-phase-2.png"
+              class="img-fluid"
+              alt="Login and User Management"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-2"
+            /><br /><a
+              class="btn btn-outline-primary mt-3"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-2"
+            >
+              Zoom image
+            </a>
+          </p>
+          <p>
+            A user management and a login will be implemented for company
+            employees. It will include the necessary password reset
+            functionality.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h5>Content Editing<br />(Phase II)</h5>
+          <p class="text-center">
+            <img
+              src="img/concept-sketches/04_content-editing-phase-2.png"
+              class="img-fluid"
+              alt="Content Editing"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-3"
+            /><br /><a
+              class="btn btn-outline-primary mt-3"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-3"
+            >
+              Zoom image
+            </a>
+          </p>
+          <p>
+            Once logged in, company emplyees can access the editorial backend to
+            create news items for publication and to edit the content on the
+            default pages (home, about, services, etc.).
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>News Section<br />(Phase II)</h5>
+          <p class="text-center">
+            <img
+              src="img/concept-sketches/03_news-section-phase-2.png"
+              class="img-fluid"
+              alt="News Section"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-4"
+            /><br /><a
+              class="btn btn-outline-primary mt-3"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-4"
+            >
+              Zoom image
+            </a>
+          </p>
+          <p>
+            The frontend needs to be extended to provide a news section and
+            articles as well as a news archive.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h5>Backoffice Features<br />(Phase III)</h5>
+          <p class="text-center">
+            <img
+              src="img/concept-sketches/05_backoffice-phase 3.png"
+              class="img-fluid"
+              alt="Backoffice Management"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-5"
+            /><br /><a
+              class="btn btn-outline-primary mt-3"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-5"
+            >
+              Zoom image
+            </a>
+          </p>
+          <p>
+            Here employees can create and manage quote offerings for interested
+            parties and put together their custom offers based on the predefined
+            services. They will also be able to create and manage customers
+            (name, address, email address, phone number, etc.) as well as create
+            and manage invoices for delivered services.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h5>Database Entity Relationship Diagram</h5>
+          <p>
+            The database will have seven tables. The main customer tables will
+            be related to the invoices and the offerings. The services table
+            will contain the individual cleaning services provided by the
+            company and their price. These will be listed in the user interface
+            so that they can be added to offers and invoices. The other tables
+            will contain the content for the news articles and the default pages
+            (e.g. home, about, services, etc.).
+          </p>
+          <p class="text-center">
+            <img
+              src="img/concept-sketches/06_db-erd.png"
+              class="img-fluid"
+              alt="Database Entity Relationship Management"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-6"
+            /><br /><a
+              class="btn btn-outline-primary mt-1 mb-3"
+              data-bs-toggle="modal"
+              data-bs-target="#cleaning-modal-6"
+            >
+              Zoom image
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cleaning-modal-1"
+        tabindex="-1"
+        aria-labelledby="cleaning-modal-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cleaning-modal-1">
+                Website Sitemap (Phase I)
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                This sketch features pages describing the services, the company
+                and a video. The directions to the office will be an embedded
+                Google Maps snippet and the contact form will use Elastic Mail
+                for users to send requests to the company.
+              </p>
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/01_website-phase1.png"
+                  class="img-fluid"
+                  alt="Website Sitemap (Phase I)"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-2"
+                data-bs-dismiss="modal"
+              >
+                Next &raquo;
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="cleaning-modal-4" tabindex="-1" aria-labelledby="cleaning-modal-4" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleaning-modal-4">News Section
-              (Phase II)</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>The frontend needs to be extended to provide a news section and articles as well as a
-              news archive.</p>
-            <p class="text-center"><img src="img/concept-sketches/03_news-section-phase-2.png"
-                                        class="img-fluid" alt="News Section (Phase II)"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-3" data-bs-dismiss="modal">&laquo; Previous</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-5" data-bs-dismiss="modal">Next &raquo;</button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cleaning-modal-wireframes-1"
+        tabindex="-1"
+        aria-labelledby="cleaning-modal-wireframes-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cleaning-modal-wireframes-1">
+                Website Wireframes (Phase I)
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                This sketch shows the wireframes of the frontpage with a
+                carousel slider on the top, a list of services as cards, a
+                contact form, a Youtube video and an embedded Google Map.
+              </p>
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/website-wireframes.jpg"
+                  class="img-fluid"
+                  alt="Website Wireframes (Phase I)"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-2"
+                data-bs-dismiss="modal"
+              >
+                Next &raquo;
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="cleaning-modal-5" tabindex="-1" aria-labelledby="cleaning-modal-5" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleaning-modal-5">Backoffice Features
-              (Phase III)</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Here employees can create and manage quote offerings for interested parties and put
-              together their custom offers based on the predefined services. They will also be
-              able to
-              create and manage customers (name, address, email address, phone number, etc.) as
-              well
-              as create and manage invoices for delivered services.</p>
-            <p class="text-center"><img src="img/concept-sketches/05_backoffice-phase 3.png"
-                                        class="img-fluid" alt="Backoffice Features (Phase III)"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-3" data-bs-dismiss="modal">&laquo; Previous</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-5" data-bs-dismiss="modal">Next &raquo;</button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cleaning-modal-2"
+        tabindex="-1"
+        aria-labelledby="cleaning-modal-2"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cleaning-modal-2">
+                Login and User Management (Phase II)
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                A user management and a login will be implemented for company
+                employees. It will include the necessary password reset
+                functionality.
+              </p>
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/02_user-login-phase-2.png"
+                  class="img-fluid"
+                  alt="Login and User Management (Phase II)"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-1"
+                data-bs-dismiss="modal"
+              >
+                &laquo; Previous
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-3"
+                data-bs-dismiss="modal"
+              >
+                Next &raquo;
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="cleaning-modal-6" tabindex="-1" aria-labelledby="cleaning-modal-6" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cleaning-modal-6">Database Entity Relationship Diagram</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>The database will have six tables. The main customer tables will be related to the
-              invoices and the offerings. The services table will contain the individual cleaning
-              services provided by the company and their price. These will be listed in the user
-              interface so that they can be added to offers and invoices. The other tables will
-              contain the content for the news articles and the default pages (e.g. home, about,
-              services, etc.).</p>
-            <p class="text-center"><img src="img/concept-sketches/06_db-erd.png" class="img-fluid"
-                                        alt="Database Entity Relationship Diagram"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#cleaning-modal-5" data-bs-dismiss="modal">&laquo; Previous</button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cleaning-modal-3"
+        tabindex="-1"
+        aria-labelledby="cleaning-modal-3"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cleaning-modal-3">
+                Content Editing (Phase II)
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Once logged in, company emplyees can access the editorial
+                backend to create news items for publication and to edit the
+                content on the default pages (home, about, services, etc.).
+              </p>
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/04_content-editing-phase-2.png"
+                  class="img-fluid"
+                  alt="Content Editing (Phase II)"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-2"
+                data-bs-dismiss="modal"
+              >
+                &laquo; Previous
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-4"
+                data-bs-dismiss="modal"
+              >
+                Next &raquo;
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-  </main>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cleaning-modal-4"
+        tabindex="-1"
+        aria-labelledby="cleaning-modal-4"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cleaning-modal-4">
+                News Section (Phase II)
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                The frontend needs to be extended to provide a news section and
+                articles as well as a news archive.
+              </p>
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/03_news-section-phase-2.png"
+                  class="img-fluid"
+                  alt="News Section (Phase II)"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-3"
+                data-bs-dismiss="modal"
+              >
+                &laquo; Previous
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-5"
+                data-bs-dismiss="modal"
+              >
+                Next &raquo;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <footer class="bg-dark text-muted py-5">
-    <div class="container">
-      <p class="float-end mb-1">
-        <a href="#">Back to top</a>
-      </p>
-      <p class="mb-1">
-        Showcase of side projects, videos and writing about comics, computer
-        history and development.
-      </p>
-    </div>
-  </footer>
-  <script src="js/bootstrap.bundle.min.js"></script>
-</body>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cleaning-modal-5"
+        tabindex="-1"
+        aria-labelledby="cleaning-modal-5"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cleaning-modal-5">
+                Backoffice Features (Phase III)
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Here employees can create and manage quote offerings for
+                interested parties and put together their custom offers based on
+                the predefined services. They will also be able to create and
+                manage customers (name, address, email address, phone number,
+                etc.) as well as create and manage invoices for delivered
+                services.
+              </p>
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/05_backoffice-phase 3.png"
+                  class="img-fluid"
+                  alt="Backoffice Features (Phase III)"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-3"
+                data-bs-dismiss="modal"
+              >
+                &laquo; Previous
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-5"
+                data-bs-dismiss="modal"
+              >
+                Next &raquo;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="cleaning-modal-6"
+        tabindex="-1"
+        aria-labelledby="cleaning-modal-6"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cleaning-modal-6">
+                Database Entity Relationship Diagram
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                The database will have six tables. The main customer tables will
+                be related to the invoices and the offerings. The services table
+                will contain the individual cleaning services provided by the
+                company and their price. These will be listed in the user
+                interface so that they can be added to offers and invoices. The
+                other tables will contain the content for the news articles and
+                the default pages (e.g. home, about, services, etc.).
+              </p>
+              <p class="text-center">
+                <img
+                  src="img/concept-sketches/06_db-erd.png"
+                  class="img-fluid"
+                  alt="Database Entity Relationship Diagram"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#cleaning-modal-5"
+                data-bs-dismiss="modal"
+              >
+                &laquo; Previous
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+        <p class="mb-1">
+          Showcase of side projects, videos and writing about comics, computer
+          history and development.
+        </p>
+      </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
